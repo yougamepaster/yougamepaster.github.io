@@ -1,55 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReModerné</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <h1>ReModerné</h1>
-    <p>Making LineageOS better, broader, and more private.</p>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="logo-pill">
+          <span class="logo-dot"></span>
+          <span class="logo-text" data-i18n="brand">ReModerné</span>
+        </div>
+        <span class="topbar-tag" data-i18n="tagline">custom LineageOS builds</span>
+      </div>
+
+      <nav class="topbar-nav">
+        <a href="#about" data-i18n="nav_about">about</a>
+        <a href="#features" data-i18n="nav_features">features</a>
+        <a href="#get-involved" data-i18n="nav_involved">get involved</a>
+      </nav>
+
+      <div class="topbar-controls">
+        <!-- Language switch -->
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn is-active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+
+        <!-- Theme switch -->
+        <button class="theme-toggle" aria-label="Toggle light/dark theme">
+          <span class="theme-icon theme-icon-sun">☀️</span>
+          <span class="theme-icon theme-icon-moon">🌙</span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About ReModerné</h2>
-      <p>ReModerné is a project dedicated to improving LineageOS experience. We support a wider range of devices, enhance privacy, and provide better support for both users and maintainers.</p>
+  <!-- Hero block -->
+  <main class="page">
+    <section class="hero-block">
+      <div class="hero-main">
+        <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="hero_kicker">community android project</p>
+          <h1 data-i18n="hero_title">ReModerné – a fast, private LineageOS remix</h1>
+          <p class="hero-sub" data-i18n="hero_sub">
+            Official-style builds, broader device support and privacy‑focused defaults, 
+            without locking you to any specific phone.
+          </p>
+          <div class="hero-actions">
+            <a href="#get-involved" class="btn btn-primary" data-i18n="cta_join">join the project</a>
+            <a href="#features" class="btn btn-ghost" data-i18n="cta_features">see features</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <p class="hero-panel-label" data-i18n="hero_today_label">today</p>
+          <p class="hero-panel-metric" data-i18n="hero_metric">stable builds</p>
+          <p class="hero-panel-note" data-i18n="hero_note">rolling releases, OTA updates, no tracking</p>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-pill">
+          <span class="meta-label" data-i18n="meta_focus_label">focus</span>
+          <span class="meta-value" data-i18n="meta_focus_value">privacy & accessibility</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-label" data-i18n="meta_devices_label">devices</span>
+          <span class="meta-value" data-i18n="meta_devices_value">more than upstream LineageOS</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-label" data-i18n="meta_status_label">status</span>
+          <span class="meta-value meta-ok" data-i18n="meta_status_value">operational</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-      <h2>Key Features</h2>
-      <ul>
-        <li><span class="icon">🔧</span> Polished official builds from unofficial sources.</li>
-        <li><span class="icon">📱</span> Broader device support than LineageOS.</li>
-        <li><span class="icon">🔒</span> Improved privacy solutions with sandboxed GApps alternative.</li>
-        <li><span class="icon">🤝</span> Friendly support for maintainers and users.</li>
-        <li><span class="icon">🛡️</span> Security-focused enhancements without device lockdowns.</li>
-      </ul>
+    <!-- About block -->
+    <section id="about" class="block block-wide">
+      <div class="block-inner">
+        <h2 data-i18n="about_title">What is ReModerné?</h2>
+        <p data-i18n="about_p1">
+          ReModerné refines LineageOS by curating high‑quality unofficial builds, 
+          extending device coverage and shipping sane, privacy‑respecting defaults.
+        </p>
+        <p data-i18n="about_p2">
+          The goal is to keep your devices usable for longer while staying secure, open 
+          and friendly to both power users and newcomers.
+        </p>
+      </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section id="get-involved">
-      <h2>Get Involved</h2>
-      <p>Contribute to the project, test builds, or report issues. Your feedback helps us make ReModerné even better.</p>
-      <a href="#" class="btn">Join the Project</a>
+    <!-- Features -->
+    <section id="features" class="block">
+      <div class="block-inner">
+        <div class="block-header">
+          <h2 data-i18n="features_title">Why use ReModerné?</h2>
+          <p class="block-sub" data-i18n="features_sub">
+            A calm, predictable LineageOS experience with better support and less noise.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 data-i18n="feat1_title">Official‑style builds</h3>
+            <p data-i18n="feat1_text">Curated and tested ROMs so you can flash once and forget.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 data-i18n="feat2_title">Broader device coverage</h3>
+            <p data-i18n="feat2_text">Support for more phones and tablets than upstream LineageOS.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 data-i18n="feat3_title">Privacy‑first defaults</h3>
+            <p data-i18n="feat3_text">Alternative GApps options, sandboxed services and telemetry‑free builds.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 data-i18n="feat4_title">Friendly community</h3>
+            <p data-i18n="feat4_text">Help for maintainers and users in one place, with simple guidelines.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 data-i18n="feat5_title">Secure, but flexible</h3>
+            <p data-i18n="feat5_text">Hardened configs without forcing a specific vendor or chip.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA block -->
+    <section id="get-involved" class="block block-cta">
+      <div class="block-inner cta-inner">
+        <div>
+          <h2 data-i18n="cta_block_title">Get involved today</h2>
+          <p data-i18n="cta_block_text">
+            Contribute device trees, test nightlies or just report bugs – 
+            every small action helps keep Android devices alive and private.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary" data-i18n="cta_join2">join the project</a>
+          <a href="#" class="btn btn-ghost-light" data-i18n="cta_matrix">matrix support</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    &copy; 2026 ReModerné. All rights reserved.
+  <footer class="footer">
+    <div class="footer-inner">
+      <span data-i18n="footer_copy">&copy; 2026 ReModerné. all rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://github.com" data-i18n="footer_github">github</a>
+        <span class="dot"></span>
+        <a href="https://example.com" data-i18n="footer_matrix">matrix</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- W3Schools References -->
-  <!-- HTML Elements: https://www.w3schools.com/html/default.asp -->
-  <!-- CSS: https://www.w3schools.com/css/default.asp -->
+  <script>
+    // THEME TOGGLE
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+        root.setAttribute('data-theme', 'dark');
+      }
+
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'light';
+        const next = current === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+
+    // LANGUAGE SWITCH
+    (function () {
+      const translations = {
+        en: {
+          brand: 'ReModerné',
+          tagline: 'custom LineageOS builds',
+          nav_about: 'about',
+          nav_features: 'features',
+          nav_involved: 'get involved',
+          hero_kicker: 'community android project',
+          hero_title: 'ReModerné – a fast, private LineageOS remix',
+          hero_sub:
+            'Official-style builds, broader device support and privacy‑focused defaults, without locking you to any specific phone.',
+          hero_today_label: 'today',
+          hero_metric: 'stable builds',
+          hero_note: 'rolling releases, OTA updates, no tracking',
+          meta_focus_label: 'focus',
+          meta_focus_value: 'privacy & accessibility',
+          meta_devices_label: 'devices',
+          meta_devices_value: 'more than upstream LineageOS',
+          meta_status_label: 'status',
+          meta_status_value: 'operational',
+          about_title: 'What is ReModerné?',
+          about_p1:
+            'ReModerné refines LineageOS by curating high‑quality unofficial builds, extending device coverage and shipping sane, privacy‑respecting defaults.',
+          about_p2:
+            'The goal is to keep your devices usable for longer while staying secure, open and friendly to both power users and newcomers.',
+          features_title: 'Why use ReModerné?',
+          features_sub:
+            'A calm, predictable LineageOS experience with better support and less noise.',
+          feat1_title: 'Official‑style builds',
+          feat1_text: 'Curated and tested ROMs so you can flash once and forget.',
+          feat2_title: 'Broader device coverage',
+          feat2_text: 'Support for more phones and tablets than upstream LineageOS.',
+          feat3_title: 'Privacy‑first defaults',
+          feat3_text: 'Alternative GApps options, sandboxed services and telemetry‑free builds.',
+          feat4_title: 'Friendly community',
+          feat4_text: 'Help for maintainers and users in one place, with simple guidelines.',
+          feat5_title: 'Secure, but flexible',
+          feat5_text: 'Hardened configs without forcing a specific vendor or chip.',
+          cta_block_title: 'Get involved today',
+          cta_block_text:
+            'Contribute device trees, test nightlies or just report bugs – every small action helps keep Android devices alive and private.',
+          cta_join: 'join the project',
+          cta_features: 'see features',
+          cta_join2: 'join the project',
+          cta_matrix: 'matrix support',
+          footer_copy: '© 2026 ReModerné. all rights reserved.',
+          footer_github: 'github',
+          footer_matrix: 'matrix'
+        },
+        ru: {
+          brand: 'ReModerné',
+          tagline: 'кастомные сборки LineageOS',
+          nav_about: 'о проекте',
+          nav_features: 'возможности',
+          nav_involved: 'как помочь',
+          hero_kicker: 'сообщественный android-проект',
+          hero_title: 'ReModerné — быстрый и приватный ремикс LineageOS',
+          hero_sub:
+            'Собранные и протестированные прошивки, больше поддерживаемых устройств и настройки конфиденциальности по умолчанию.',
+          hero_today_label: 'сегодня',
+          hero_metric: 'стабильные сборки',
+          hero_note: 'rolling‑релизы, OTA‑обновления, без слежки',
+          meta_focus_label: 'фокус',
+          meta_focus_value: 'приватность и доступность',
+          meta_devices_label: 'устройства',
+          meta_devices_value: 'больше, чем в LineageOS',
+          meta_status_label: 'статус',
+          meta_status_value: 'работает',
+          about_title: 'Что такое ReModerné?',
+          about_p1:
+            'ReModerné улучшает LineageOS, отбирая качественные неофициальные сборки, расширяя список устройств и сохраняя приватность по умолчанию.',
+          about_p2:
+            'Цель проекта — продлить жизнь вашим устройствам, оставаясь безопасными, открытыми и дружелюбными для новичков и опытных пользователей.',
+          features_title: 'Почему ReModerné?',
+          features_sub:
+            'Спокойный и предсказуемый опыт LineageOS с лучшей поддержкой и меньшим количеством шума.',
+          feat1_title: 'Сборки уровня “official”',
+          feat1_text: 'Отобранные и протестированные прошивки — прошил и забыл.',
+          feat2_title: 'Больше устройств',
+          feat2_text: 'Поддержка большего количества телефонов и планшетов, чем в LineageOS.',
+          feat3_title: 'Приватность по умолчанию',
+          feat3_text: 'Альтернативные GApps, песочницы и отсутствие телеметрии.',
+          feat4_title: 'Дружелюбное сообщество',
+          feat4_text: 'Помощь мейнтейнерам и пользователям в одном месте, простые правила.',
+          feat5_title: 'Безопасно, но гибко',
+          feat5_text: 'Усиленные настройки без привязки к конкретному вендору или чипу.',
+          cta_block_title: 'Присоединяйтесь сегодня',
+          cta_block_text:
+            'Присылайте device tree, тестируйте nightly‑сборки или просто сообщайте о багах — любая помощь важна.',
+          cta_join: 'присоединиться к проекту',
+          cta_features: 'посмотреть возможности',
+          cta_join2: 'присоединиться к проекту',
+          cta_matrix: 'поддержка в Matrix',
+          footer_copy: '© 2026 ReModerné. все права защищены.',
+          footer_github: 'github',
+          footer_matrix: 'matrix'
+        }
+      };
+
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const translatable = document.querySelectorAll('[data-i18n]');
+      const storedLang = localStorage.getItem('lang') || 'en';
+
+      function applyLang(lang) {
+        const dict = translations[lang];
+        translatable.forEach(node => {
+          const key = node.getAttribute('data-i18n');
+          if (dict[key]) node.textContent = dict[key];
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem('lang', lang);
+        langButtons.forEach(btn => {
+          btn.classList.toggle('is-active', btn.dataset.lang === lang);
+        });
+      }
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+      });
+
+      applyLang(storedLang);
+    })();
+  </script>
 </body>
 </html>
